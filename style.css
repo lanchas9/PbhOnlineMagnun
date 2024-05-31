@@ -57,7 +57,14 @@ body{
     /* background-color: red; */
     margin-bottom: 20px;
 }
-
+.imagen{
+    width: 80%;
+    height: 70%;
+    /* border: black 1px solid; */
+    box-shadow: black 5px 5px 5px;
+    margin-bottom: 20px;
+    /* background-color: green; */
+}
 .imagenSalida{
     width: 50%;
     /* border: black 1px solid; */
