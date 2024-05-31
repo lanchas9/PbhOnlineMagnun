@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Magnum Photobooth</title>
+</head>
+<body onload="muestraFoto()">
+    <div class="centrado">
+        <div id="camara" class="camara">
+            <img src="img/logo.png" alt="" srcset="" class="logo2">
+        </div>
+        <img src="" alt="" srcset="" class="imagenSalida" id="imagen">
+        <br>
+        
+        <table>
+            <tr>
+                <td>
+                    <img src="overlay/01.png" alt="" srcset="" class="thumbnail" onclick="creaLinkDownload(0)">
+                </td>
+                <td>
+                    <img src="overlay/02.png" alt="" srcset="" class="thumbnail" onclick="creaLinkDownload(1)">
+                </td>
+                <td>
+                    <img src="overlay/03.png" alt="" srcset="" class="thumbnail" onclick="creaLinkDownload(2)">
+                </td>
+            </tr>
+        </table>
+        <a href="nada.jpg" download="" id="downloadIcon">
+            <img src="img/descargar.png" alt="" srcset="" class="boton2">
+        </a>
+        <img src="img/salir.png" alt="" srcset="" class="boton2" onclick="siguientePagina()">
+    </div>
+    
+<script>
+    let preSet = "f_auto/fl_attachment/"
+    let paths = [];
+    let url = "";
+    
+    paths.push("https://res.cloudinary.com/yellowhat/image/upload/t_magnum01/");
+    paths.push("https://res.cloudinary.com/yellowhat/image/upload/t_magnum02/");
+    paths.push("https://res.cloudinary.com/yellowhat/image/upload/t_magnum03/");
+
+    function muestraFoto(){
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        url = urlParams.get('foto');
+        console.log({url});
+        let imagen01 = document.getElementById('imagen');
+        imagen.src = paths[0] + url;
+        creaLinkDownload(0);
+    }
+
+    function siguientePagina(){
+        window.location.href = "https://www.magnumicecream.com/";
+    }
+
+    function creaLinkDownload(numFoto){
+        let downloadIcon = document.getElementById('downloadIcon');
+        downloadIcon.href = paths[numFoto] + preSet + url;
+        downloadIcon.download = "foto" + numFoto + ".jpg";
+    }
+</script>
+</body>
+</html>
