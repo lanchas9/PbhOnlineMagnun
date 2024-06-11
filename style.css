@@ -1,5 +1,5 @@
 body{
-    background-color: #fff;
+    background-color: #241201;
     font-family: Arial, sans-serif;
     margin: 0px;
     padding: 0px;
@@ -7,8 +7,8 @@ body{
 }
 /* //crea un patron para el background de la página con el archivo back.jpg y que se repita */
 body{
-    background-image: url('img/back.jpg');
-    background-repeat: repeat;
+    /* background-image: url('img/back.jpg');
+    background-repeat: repeat; */
 }
 
 .centrado{
@@ -19,8 +19,8 @@ body{
 .logo{
     margin-top: 20vh;
     margin-bottom: 20vh;
-    width: 60%;
-    max-width: 400px;
+    width: 80%;
+    max-width: 800px;
 }
 
 
@@ -52,14 +52,14 @@ body{
 }
 
 .video{
-    width: 80%;
-    height: 70%;
+    width: 60%;
+    /* height: 70%; */
     /* background-color: red; */
     margin-bottom: 20px;
 }
 .imagen{
-    width: 80%;
-    height: 70%;
+    width: 60%;
+    /* height: 70%; */
     /* border: black 1px solid; */
     box-shadow: black 5px 5px 5px;
     margin-bottom: 20px;
@@ -98,4 +98,26 @@ body{
     background-color: white;
     margin-left: 55px;
     margin-bottom: 10%;
+  }
+  .thumbnail2{
+    height: 100px;
+    background-color: white;
+    margin-left: 55px;
+    margin-bottom: 10%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .td33{
+    width: 33%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .tr100{
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: center;
   }

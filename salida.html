@@ -12,9 +12,9 @@
             <img src="img/logo.png" alt="" srcset="" class="logo2">
         </div>
         <img src="" alt="" srcset="" class="imagenSalida" id="imagen">
-        <br>
+        <br><br><br>
         
-        <table>
+        <!-- <table>
             <tr>
                 <td>
                     <img src="overlay/01.png" alt="" srcset="" class="thumbnail" onclick="creaLinkDownload(0)">
@@ -26,7 +26,7 @@
                     <img src="overlay/03.png" alt="" srcset="" class="thumbnail" onclick="creaLinkDownload(2)">
                 </td>
             </tr>
-        </table>
+        </table> -->
         <a href="nada.jpg" download="" id="downloadIcon">
             <img src="img/descargar.png" alt="" srcset="" class="boton2">
         </a>
@@ -37,7 +37,8 @@
     let preSet = "f_auto/fl_attachment/"
     let paths = [];
     let url = "";
-    
+    let overlaySeleccionado = 0;
+    paths.push("");
     paths.push("https://res.cloudinary.com/yellowhat/image/upload/t_magnum01/");
     paths.push("https://res.cloudinary.com/yellowhat/image/upload/t_magnum02/");
     paths.push("https://res.cloudinary.com/yellowhat/image/upload/t_magnum03/");
@@ -46,10 +47,11 @@
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         url = urlParams.get('foto');
+        overlaySeleccionado = parseInt(urlParams.get('overlaySeleccionado'));
         console.log({url});
         let imagen01 = document.getElementById('imagen');
-        imagen.src = paths[0] + url;
-        creaLinkDownload(0);
+        imagen.src = paths[overlaySeleccionado] + url;
+        creaLinkDownload(overlaySeleccionado);
     }
 
     function siguientePagina(){

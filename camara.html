@@ -16,10 +16,37 @@
         </div>
         <div id="camara" class="hidden">
             <video controls="true" autoplay playsinline loop muted id="video" class="video"></video>
+            <table  class="tr100">
+                <tr>
+                    <td class="td33">
+                        <img src="overlay/01.png" alt="" srcset="" class="thumbnail2" onclick="ponerOverlaySobreVideo(0)">
+                    </td>
+                    <td class="td33">
+                        <img src="overlay/02.png" alt="" srcset="" class="thumbnail2" onclick="ponerOverlaySobreVideo(1)">
+                    </td>
+                    <td class="td33">
+                        <img src="overlay/03.png" alt="" srcset="" class="thumbnail2" onclick="ponerOverlaySobreVideo(2)">
+                    </td>
+                </tr>
+            </table>
         </div>
         <div id="divImagen" class="hidden">
-            <img id="imagen" src="" alt="" srcset="">
+            <!-- <img id="imagen" src="" alt="" srcset=""> -->
+            <table class="tr100">
+                <tr>
+                    <td class="td33">
+                        <img src="overlay/01.png" alt="" srcset="" class="thumbnail2" onclick="ponerOverlaySobreVideo(0)">
+                    </td>
+                    <td class="td33">
+                        <img src="overlay/02.png" alt="" srcset="" class="thumbnail2" onclick="ponerOverlaySobreVideo(1)">
+                    </td>
+                    <td class="td33">
+                        <img src="overlay/03.png" alt="" srcset="" class="thumbnail2" onclick="ponerOverlaySobreVideo(2)">
+                    </td>
+                </tr>
+            </table>
         </div>
+        <br><br>
         <img src="img/camaraSelfie.png" alt="" srcset="" class="boton2" onclick="boton1presionado()" id="btn1">
         <img src="img/camaraTrasera.png" alt="" srcset="" class="boton2" onclick="boton2presionado()" id="btn2">
     </div>
@@ -29,6 +56,36 @@
     let camaraAbierta = false;
     let stream = null;
     let modoUpload = false;
+    let overlaySeleccionado = 0;
+
+    function ponerOverlaySobreVideo(val){
+        
+        let str = ""
+        if (modoBoton == "paso1"){
+            str = "video"
+        }else{
+            str = "canvas"
+        }
+        let index = val + 1;
+        overlaySeleccionado = index;
+        let video = document.getElementById(str);
+        let divCamara = document.getElementById("camara");
+        if(document.querySelector("#overlay") != null){
+            divCamara.removeChild(document.querySelector("#overlay"));
+        }
+        let img = document.createElement("img");
+        img.class = "overlay";
+        img.id = "overlay";
+        img.src = "overlay/0" + index + ".png";
+        img.width = video.scrollWidth;
+        img.height = video.scrollHeight;
+        img.style.position = "absolute";
+        img.style.top = video.offsetTop + "px";
+        img.style.left = video.offsetLeft + "px";
+        console.log("Ancho : " + divCamara.scrollWidth + " Alto : " + divCamara.scrollHeight)
+        divCamara.appendChild(img);
+        console.log("ya pusimos el poster al div de la camara")        
+    }
 
     // async function boton2presionado(){
     //     if (camaraAbierta){
@@ -326,7 +383,7 @@
             div.style.top = camara.offsetTop + "px";
             div.style.left = camara.offsetLeft + "px";
             div.style.zIndex = "1";
-            div.style.backgroundImage = "url('img/3.png')";
+            div.style.backgroundImage = "url('img/num3.png')";
             div.style.backgroundSize = "cover";
             div.style.backgroundRepeat = "no-repeat";
             div.style.backgroundPosition = "center";
@@ -343,21 +400,21 @@
         }else if(indexTomaFoto == 2 ){
             indexTomaFoto = 3
             let camara = document.getElementById("divFoto1");
-            camara.style.backgroundImage = "url('img/2.png')";
+            camara.style.backgroundImage = "url('img/num2.png')";
             setTimeout(function(){
                 tomaFoto()
             }, 1000)
         }else if(indexTomaFoto == 3 ){
             indexTomaFoto = 4
             let camara = document.getElementById("divFoto1");
-            camara.style.backgroundImage = "url('img/1.png')";
+            camara.style.backgroundImage = "url('img/num1.png')";
             setTimeout(function(){
                 tomaFoto()
             }, 1000)
         }else if(indexTomaFoto == 4 ){
             indexTomaFoto = 5
             let camara = document.getElementById("divFoto1");
-            camara.style.backgroundImage = "url('img/0.png')";
+            camara.style.backgroundImage = "url('img/num0.png')";
             setTimeout(function(){
                 tomaFoto()
             }, 1000)
@@ -392,7 +449,8 @@
             // })
             // video.className = "camaraSelfie ocultoCanvas"
             document.getElementById("camara").removeChild(video);
-            document.getElementById("camara").appendChild(canvas);
+            document.getElementById("divFoto1").remove();
+            document.getElementById("camara").prepend(canvas);
             modoBoton = 'paso2'
 
             let btn1 = document.querySelector("#btn1");
@@ -521,7 +579,7 @@
 
     function abrePhotobooth(str){
         setTimeout(() => {
-            window.location.href = 'salida.html' + '?foto=' + str
+            window.location.href = 'salida.html' + '?overlaySeleccionado=' + overlaySeleccionado + '&foto=' + str
         }, 5000);
     }
 
