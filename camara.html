@@ -13,23 +13,23 @@
 <body>
     <div class="centrado" id="padre">
         <div id="header" class="hidden">
-            <img src="img/logo.png" alt="" srcset="" class="logo2">
+            <img src="img/logo_optimized_.png" alt="" srcset="" class="logo2">
         </div>
         <div id="logo" class="show">
-            <img src="img/logo.png" alt="" srcset="" class="logo">
+            <img src="img/logo_optimized_.png" alt="" srcset="" class="logo">
         </div>
         <div id="camara" class="hidden">
             <video controls="true" autoplay playsinline loop muted id="video" class="video"></video>
             <table  class="tr100">
                 <tr>
                     <td class="td33">
-                        <img src="overlay/01.png" alt="" srcset="" class="thumbnail2" onclick="ponerOverlaySobreVideo(0)">
+                        <img src="overlay/01_optimized_.png" alt="" srcset="" class="thumbnail2" onclick="ponerOverlaySobreVideo(0)">
                     </td>
                     <td class="td33">
-                        <img src="overlay/02.png" alt="" srcset="" class="thumbnail2" onclick="ponerOverlaySobreVideo(1)">
+                        <img src="overlay/02_optimized_.png" alt="" srcset="" class="thumbnail2" onclick="ponerOverlaySobreVideo(1)">
                     </td>
                     <td class="td33">
-                        <img src="overlay/03.png" alt="" srcset="" class="thumbnail2" onclick="ponerOverlaySobreVideo(2)">
+                        <img src="overlay/03_optimized_.png" alt="" srcset="" class="thumbnail2" onclick="ponerOverlaySobreVideo(2)">
                     </td>
                 </tr>
             </table>
@@ -39,20 +39,20 @@
             <table class="tr100">
                 <tr>
                     <td class="td33">
-                        <img src="overlay/01.png" alt="" srcset="" class="thumbnail2" onclick="ponerOverlaySobreVideo(0)">
+                        <img src="overlay/01_optimized_.png" alt="" srcset="" class="thumbnail2" onclick="ponerOverlaySobreVideo(0)">
                     </td>
                     <td class="td33">
-                        <img src="overlay/02.png" alt="" srcset="" class="thumbnail2" onclick="ponerOverlaySobreVideo(1)">
+                        <img src="overlay/02_optimized_.png" alt="" srcset="" class="thumbnail2" onclick="ponerOverlaySobreVideo(1)">
                     </td>
                     <td class="td33">
-                        <img src="overlay/03.png" alt="" srcset="" class="thumbnail2" onclick="ponerOverlaySobreVideo(2)">
+                        <img src="overlay/03_optimized_.png" alt="" srcset="" class="thumbnail2" onclick="ponerOverlaySobreVideo(2)">
                     </td>
                 </tr>
             </table>
         </div>
         <br><br>
-        <img src="img/camaraSelfie.png" alt="" srcset="" class="boton2" onclick="boton1presionado()" id="btn1">
-        <img src="img/camaraTrasera.png" alt="" srcset="" class="boton2" onclick="boton2presionado()" id="btn2">
+        <img src="img/camaraSelfie_optimized_.png" alt="" srcset="" class="boton2" onclick="boton1presionado()" id="btn1">
+        <img src="img/camaraTrasera_optimized_.png" alt="" srcset="" class="boton2" onclick="boton2presionado()" id="btn2">
     </div>
     
 <script>
@@ -80,7 +80,7 @@
         let img = document.createElement("img");
         img.class = "overlay";
         img.id = "overlay";
-        img.src = "overlay/0" + index + ".png";
+        img.src = "overlay/0" + index + "_optimized_.png";
         img.width = video.scrollWidth;
         img.height = video.scrollHeight;
         img.style.position = "absolute";
@@ -151,7 +151,7 @@
                 
 
                 let btn1 = document.querySelector("#btn1");
-                btn1.src = "img/aceptar.png";
+                btn1.src = "img/aceptar_optimized_.png";
 
                 document.getElementById("logo").classList.replace("show", "hidden");
                 document.getElementById("header").classList.replace("hidden", "show");
@@ -163,10 +163,10 @@
 
     async function cancelarCamara(){
         let btn1 = document.querySelector("#btn1");
-        btn1.src = "img/camaraSelfie.png";
+        btn1.src = "img/camaraSelfie_optimized_.png";
 
         let btn2 = document.querySelector("#btn2");
-        btn2.src = "img/cameraTrasera.png";
+        btn2.src = "img/cameraTrasera_optimized_.png";
 
         document.getElementById("logo").classList.replace("hidden", "show");
         document.getElementById("camara").classList.replace("show", "hidden");
@@ -332,7 +332,7 @@
         // let video = document.querySelector("#video");
         // let divCamara = document.getElementById("camara");
         // let img = document.createElement("img");
-        // img.src = "overPrueba.png";
+        // img.src = "overPrueba_optimized_.png";
         // img.width = video.scrollWidth;
         // img.height = video.scrollHeight;
         // console.log("Ancho : " + divCamara.scrollWidth + " Alto : " + divCamara.scrollHeight)
@@ -348,10 +348,10 @@
 
 
         let btn1 = document.querySelector("#btn1");
-        btn1.src = "img/tomaSelfie.png";
+        btn1.src = "img/tomaSelfie_optimized_.png";
 
         let btn2 = document.querySelector("#btn2");
-        btn2.src = "img/cancelar.png";
+        btn2.src = "img/cancelar_optimized_.png";
 
         document.getElementById("logo").classList.replace("show", "hidden");
         document.getElementById("camara").classList.replace("hidden", "show");
@@ -361,7 +361,7 @@
 
         // let btn2 = document.createElement("img");
         // btn2.id = "tomaFoto";
-        // btn2.src = "img/btn1.png";
+        // btn2.src = "img/btn1_optimized_.png";
         // btn2.onclick = function(){tomaFoto()};
         // btn2.className = "image2";
         // document.getElementById("center").appendChild(btn2);
@@ -387,7 +387,7 @@
             div.style.top = camara.offsetTop + "px";
             div.style.left = camara.offsetLeft + "px";
             div.style.zIndex = "1";
-            div.style.backgroundImage = "url('img/num3.png')";
+            div.style.backgroundImage = "url('img/num3_optimized_.png')";
             div.style.backgroundSize = "cover";
             div.style.backgroundRepeat = "no-repeat";
             div.style.backgroundPosition = "center";
@@ -404,21 +404,21 @@
         }else if(indexTomaFoto == 2 ){
             indexTomaFoto = 3
             let camara = document.getElementById("divFoto1");
-            camara.style.backgroundImage = "url('img/num2.png')";
+            camara.style.backgroundImage = "url('img/num2_optimized_.png')";
             setTimeout(function(){
                 tomaFoto()
             }, 1000)
         }else if(indexTomaFoto == 3 ){
             indexTomaFoto = 4
             let camara = document.getElementById("divFoto1");
-            camara.style.backgroundImage = "url('img/num1.png')";
+            camara.style.backgroundImage = "url('img/num1_optimized_.png')";
             setTimeout(function(){
                 tomaFoto()
             }, 1000)
         }else if(indexTomaFoto == 4 ){
             indexTomaFoto = 5
             let camara = document.getElementById("divFoto1");
-            camara.style.backgroundImage = "url('img/num0.png')";
+            camara.style.backgroundImage = "url('img/num0_optimized_.png')";
             setTimeout(function(){
                 tomaFoto()
             }, 1000)
@@ -458,19 +458,19 @@
             modoBoton = 'paso2'
 
             let btn1 = document.querySelector("#btn1");
-            btn1.src = "img/aceptar.png";
+            btn1.src = "img/aceptar_optimized_.png";
             // btn1.onclick = function(){guardarFoto()};
 
             //-----------------BOTONES INICIO ABRIL 2024
             // let btn1 = document.createElement("img");
-            // btn1.src = "img/btn2.png";
+            // btn1.src = "img/btn2_optimized_.png";
             // btn1.onclick = function(){tomaFoto()};
             // btn1.className = "image2";
             // btn1.id = "repiteFoto";
             // document.getElementById("center").appendChild(btn1);
 
             // let btn2 = document.createElement("img");
-            // btn2.src = "img/btn3.png";
+            // btn2.src = "img/btn3_optimized_.png";
             // btn2.onclick = function(){guardarFoto()};
             // btn2.className = "image2";
             // btn2.id = "guardaFoto";
@@ -516,7 +516,7 @@
 
             let btn2 = document.createElement("img");
             btn2.id = "tomaFoto";
-            btn2.src = "img/btn1.png";
+            btn2.src = "img/btn1_optimized_.png";
             btn2.onclick = function(){tomaFoto()};
             btn2.className = "image2";
             document.getElementById("center").appendChild(btn2);
@@ -583,7 +583,8 @@
 
     function abrePhotobooth(str){
         setTimeout(() => {
-            window.location.href = 'salida.html' + '?overlaySeleccionado=' + overlaySeleccionado + '&foto=' + str
+            let overlayFinal = overlaySeleccionado != 0 ? overlaySeleccionado : 1
+            window.location.href = 'salida.html' + '?overlaySeleccionado=' + overlayFinal + '&foto=' + str
         }, 5000);
     }
 
@@ -600,7 +601,7 @@
         divNuevo.className = "loadingBox"
 
         let loadingNuevo = document.createElement("img")
-        loadingNuevo.src = "img/loading.gif"
+        loadingNuevo.src = "img/loading2.gif"
         loadingNuevo.className = "loadingAnimation"
 
         // loadingNuevo.style.width = document.getElementById("camara").width
