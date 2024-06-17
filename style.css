@@ -4,10 +4,7 @@ body{
     margin: 0px;
     padding: 0px;
     border: 0px;
-}
-/* //crea un patron para el background de la página con el archivo back.jpg y que se repita */
-body{
-    /* background-image: url('img/back.jpg');
+        /* background-image: url('img/back.jpg');
     background-repeat: repeat; */
 }
 
@@ -120,4 +117,14 @@ body{
     margin-left: 20%;
     margin-right: 20%;
     text-align: center;
+  }
+
+  .instagramDiv{
+    text-align: center;
+    margin-left: 30%;
+    width: 40%;
+    /* max-width: 150px; */
+    /* height: 5%; */
+    margin-top: 20px;
+    /* background-color: red; */
   }
