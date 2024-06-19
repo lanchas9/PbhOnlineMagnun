@@ -557,7 +557,8 @@
                     body: formData
                 };
                 try {
-                    let r = await fetch("https://mosaico.app:10801/upload", options)
+                    let url = "https://mosaico.app:10801/upload" + "?folder=magnum"
+                    let r = await fetch(url, options)
                     if(!r.ok){
                         resul.statusCode = r.status
                         resul.message = r.statusText
